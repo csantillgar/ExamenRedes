@@ -64,4 +64,51 @@ Descifra el enigma de la losa. Si la antigua red usaba la dirección 192.168.50.
 | 4      | 192.168.50.192/26     | 192.168.50.193       | 192.168.50.254       | 192.168.50.255           |
 
 ---
+### 4. La Encrucijada de las Rutas
+
+Llegas a una encrucijada dentro de las ruinas: cuatro caminos diferentes se extienden hacia distintas aldeas en los alrededores de la ciudad antigua. En el centro, un tótem tallado muestra flechas apuntando hacia cada camino, con inscripciones de destinos y distancias. Notas que algunas flechas parecen fijas e inmutables (talladas en la piedra), mientras que otras son piezas móviles que pudieron reorientarse si se abría o cerraba algún camino en el pasado. Este tótem se asemeja a un antiguo dispositivo de enrutamiento que dirigía el tráfico de datos por el camino adecuado.
+
+> **Pregunta:**  
+> ¿Qué concepto moderno de redes representa el tótem con flechas de la encrucijada? Explica qué es una tabla de enrutamiento y cómo funciona en un router actual. Además, interpreta la diferencia entre las flechas talladas en piedra y las flechas móviles en términos de enrutamiento estático vs. enrutamiento dinámico en redes.
+
+**Respuesta:**
+
+El tótem representa el concepto moderno de **tabla de enrutamiento**, el cual es un componente fundamental en los routers actuales.
+
+Una tabla de enrutamiento es un conjunto de normas que se almacena en el router y que tiene como función principal escoger el camino que tomarán los paquetes para llegar de forma óptima a su destino. Esta tabla funciona como un mapa. Cada entrada en la tabla suele incluir:
+
+- Una red de destino (donde se dirige).
+- Una máscara de subred (rango de direcciones dentro de la red de destino).
+- Su próximo salto (dirección del router al que se debe enviar para seguir su camino).
+- Una interfaz de salida (la interfaz del router que será utilizada para enviar el paquete).
+- Una métrica (valor que indica la calidad de la ruta).
+
+Las **flechas talladas en piedra** representan el **enrutamiento estático**, caracterizado por caminos fijos que se configuran manualmente y no pueden cambiar automáticamente, aunque el camino deje de estar disponible. Es más apropiado en redes pequeñas o cuando se requiere un control más preciso.
+
+Las **flechas móviles** representan el **enrutamiento dinámico**, caracterizado por rutas ajustables que pueden modificarse según el estado de la red. Si una conexión falla y el camino se cierra, el sistema puede calcular una nueva ruta automáticamente. Este sistema utiliza protocolos de enrutamiento como **OSPF**, **BGP** o **RIP**, que son capaces de intercambiar información entre routers para actualizar las tablas de enrutamiento.
+
+---
+
+### 5. El Guardián de la Máscara Única
+
+En la última sala del templo, frente a la salida, te encuentras con la estatua de un guardián con dos caras. Según una leyenda grabada en la base, este guardián protegía la ciudad oculta de los forasteros. Cuando un mensajero salía de la ciudad, el guardián reemplazaba su máscara por la suya propia, de modo que, para el mundo exterior, todos los mensajes parecían venir únicamente del guardián. Al regresar la respuesta, el guardián recordaba qué máscara original correspondía a cada mensaje y reenviaba la respuesta al habitante correcto dentro de la ciudad. Gracias a este ardid, la ciudad pudo ocultar la identidad de sus miembros y usar un único rostro para todas sus comunicaciones externas.
+
+> **Pregunta:**  
+> ¿Qué técnica de redes moderna se refleja en la leyenda del Guardián de la Máscara? Nombra y describe brevemente este mecanismo, explicando cómo permite que múltiples dispositivos internos de una red compartan una única identidad (dirección) al comunicarse con el exterior, y menciona dos beneficios que brinda esta estrategia a las redes actuales.
+
+**Respuesta:**
+
+La leyenda del Guardián con dos caras se asemeja a la técnica moderna conocida como **NAT (Network Address Translation)**. Este es un mecanismo que permite que varios dispositivos dentro de una red privada utilicen la **misma dirección IP pública** para comunicarse con el exterior.
+
+
+
+**Beneficios de NAT:**
+
+- **Reducción del uso de direcciones IPv4:** Se utiliza solo una IP pública para múltiples dispositivos.
+- **Mayor seguridad:** Oculta las IPs internas, dificultando el acceso directo desde el exterior.
+
+---
+
+> _Profesor, tómese un respiro. Ha guiado a su alumnado a través de los enigmas teóricos de esta antigua civilización. Ahora, prepárese para la siguiente fase: reconstruir las redes que alguna vez hicieron vibrar esta metrópolis tecnológica. ¡Ánimo, que aún queda camino por recorrer! 😆_
+
 
